@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# **DocVouch**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The **DocVouch** allows users to upload documents to **IPFS (InterPlanetary File System)** for storage while ensuring the document's integrity by storing a unique **`keccak256` hash** of the document on the **Ethereum blockchain**. The document itself is stored off-chain, but its hash is securely anchored on-chain to ensure immutability and authenticity.
 
-In the project directory, you can run:
+### Key Features:
+- Upload documents to IPFS to generate a hash.
+- Convert the IPFS hash to `bytes32` format using `keccak256` and store it on the blockchain.
+- Lightweight, cost-effective, and efficient use of blockchain for document verification.
 
-### `npm start`
+### Video Demonstration:
+---
+https://github.com/user-attachments/assets/68b510ba-93b0-4c16-ba1d-8d165ef12b16
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Flow Diagram:
+---
+![Screenshot (416)](https://github.com/user-attachments/assets/6bff2322-13bf-4747-b297-ff81ff8a7893)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Table of Contents
 
-### `npm run build`
+1. [Features](#features)
+2. [Architecture](#architecture)
+3. [Installation](#installation)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Document Upload**: Upload any document (PDF, Word, etc.) to IPFS.
+- **IPFS Hash Generation**: Each uploaded document generates a unique IPFS hash (CID).
+- **Blockchain Storage**: Convert the IPFS hash to a `keccak256` `bytes32` hash and store it on the Ethereum blockchain.
+- **Secure & Immutable**: The blockchain ensures that once the hash is stored, it cannot be altered, maintaining the integrity of the document.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Architecture
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project consists of two primary components:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **IPFS Storage (Off-Chain)**:
+   - Documents are uploaded to IPFS, a decentralized file storage system.
+   - IPFS returns a content identifier (CID) for each file uploaded, which serves as the unique hash.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Ethereum Blockchain (On-Chain)**:
+   - The IPFS hash is converted to a `keccak256` `bytes32` hash.
+   - The hash is stored on the Ethereum blockchain using a smart contract, making it immutable and verifiable.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
+To run this project locally, you'll need to have the following installed:
 
-### Code Splitting
+- **React**: To run the front-end.
+- **Remix**: For Ethereum smart contract development.
+- **IPFS Client**: To interact with the IPFS network.
+- **Ethereum Wallet**: For interacting with the Ethereum blockchain (e.g., MetaMask).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Steps
 
-### Analyzing the Bundle Size
+1. Clone the repository:
+   ```bash
+   git clone(https://github.com/Rabeet8/DocVouch.git)
+   cd DocVouch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Install Dependencies:
+```
+npm install
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
