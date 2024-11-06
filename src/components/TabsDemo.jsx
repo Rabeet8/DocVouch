@@ -63,8 +63,20 @@ export default function TabsDemo() {
   ];
 
   return (
-    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
-      <Tabs tabs={tabs} />
-    </div>
+    <>
+      <h2 class="text-4xl font-serif text-transparent bg-clip-text mt-20 bg-gradient-to-r from-blue-700 to-blue-900 text-center">
+
+      </h2>
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 font-serif">
+          Advantage of Proof-of-
+          <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
+            Existence
+          </span>
+          {" (PoE)?"}
+        </h1>
+      <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
+        <Tabs tabs={tabs} />
+      </div>
+    </>
   );
 }

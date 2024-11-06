@@ -27,6 +27,19 @@ export const ProofOfExistence = [
   {
     inputs: [
       {
+        internalType: "bytes32",
+        name: "documentHash",
+        type: "bytes32",
+      },
+    ],
+    name: "notarizeDocument",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "uint256",
         name: "",
         type: "uint256",
@@ -83,19 +96,6 @@ export const ProofOfExistence = [
       },
     ],
     stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "bytes32",
-        name: "documentHash",
-        type: "bytes32",
-      },
-    ],
-    name: "notarizeDocument",
-    outputs: [],
-    stateMutability: "nonpayable",
     type: "function",
   },
   {
